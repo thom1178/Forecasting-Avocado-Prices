@@ -1,0 +1,1 @@
+avocado <- read.csv('https://raw.githubusercontent.com/thom1178/General-Projects/master/avocado.csv' , header = T)
