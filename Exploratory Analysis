@@ -1,0 +1,18 @@
+
+avocado$Date = as.Date(avocado$Date)
+ggplot(avocado, 
+       aes(x  = Date, y = AveragePrice,
+           color= Total.Volume)) + geom_point()+ theme_light()
+ggplot(avocado, 
+       aes(AveragePrice,
+           fill= type)) + geom_histogram()+ theme_light()
+ggplot(avocado, 
+       aes(AveragePrice,Total.Bags,
+           color= region)) + geom_point()+ theme_light()
+avocadoUSA <- avocado[avocado$region == "TotalUS",]
+
+
+
+ggplot(avocadoUSA, 
+       aes(x  = Date, y = AveragePrice,
+           color= type)) + geom_point() + theme_light()
