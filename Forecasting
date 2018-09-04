@@ -1,0 +1,28 @@
+fit <- forecast::auto.arima(
+  avocadoUSA[avocadoUSA$type == "organic", "AveragePrice"]
+)
+
+plot(fit)
+
+
+
+
+indx <- which( avocadoUSA[avocadoUSA$type == "organic", "AveragePrice"]<1.2)
+
+organic <- avocadoUSA[avocadoUSA$type == "organic", "AveragePrice"]
+organic[indx] <- mean(organic)
+plot(organic, type = "l")
+
+# tsdiag(fit)
+fit <- arima( organic[1:150],
+       c(1,0, 0), seasonal = c(12, 0, 0))
+tsdiag(fit)
+
+pred <- forecast::forecast(fit, 19) 
+
+
+
+
+plot(pred)
+plot(organic, type = "l")
+
