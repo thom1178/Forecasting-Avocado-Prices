@@ -15,4 +15,4 @@ avocadoUSA <- avocado[avocado$region == "TotalUS",]
 
 ggplot(avocadoUSA, 
        aes(x  = Date, y = AveragePrice,
-           color= type)) + geom_point() + theme_light()
+           color= type)) + geom_point() 
