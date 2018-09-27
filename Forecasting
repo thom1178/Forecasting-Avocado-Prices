@@ -26,3 +26,4 @@ pred <- forecast::forecast(fit, 19)
 plot(pred)
 plot(organic, type = "l")
 
+plot(organic, type = "h")
